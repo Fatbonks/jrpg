@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cychxf1of6po8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2hwrk"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sq1oc"]
+material = SubResource("StandardMaterial3D_2hwrk")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cqvi8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjw7p"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hjgxh"]
+material = SubResource("StandardMaterial3D_qjw7p")
+
+[node name="meshlib" type="Node3D"]
+
+[node name="interactable" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_sq1oc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="interactable"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="interactable/StaticBody3D"]
+shape = SubResource("BoxShape3D_cqvi8")
+
+[node name="trap" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = SubResource("BoxMesh_hjgxh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="trap"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="trap/StaticBody3D"]
+shape = SubResource("BoxShape3D_cqvi8")
