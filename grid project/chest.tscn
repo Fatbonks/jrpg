@@ -17,3 +17,5 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="object_infomation" parent="." instance=ExtResource("2_hsngd")]
+
+[connection signal="area_entered" from="Hitbox" to="object_infomation" method="_on_hitbox_area_entered"]

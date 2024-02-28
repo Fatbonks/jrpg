@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvp43h8wiom5u"]
+
+[ext_resource type="Script" path="res://scripts/Ui.gd" id="1_fy6pe"]
+[ext_resource type="Resource" uid="uid://xrcmfax7y7va" path="res://mesh/info.tres" id="2_sdrku"]
+
+[node name="Ui" type="CanvasLayer" groups=["UI"]]
+script = ExtResource("1_fy6pe")
+ui_info = ExtResource("2_sdrku")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -162.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="name_label" type="Label" parent="PanelContainer/HBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "awdadad"
+
+[node name="Label3" type="Label" parent="PanelContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "awdadad"
+
+[node name="Label4" type="Label" parent="PanelContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "awdadad"
+
+[node name="Label5" type="Label" parent="PanelContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "awdadad"
+
+[node name="Label2" type="Label" parent="PanelContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "awdadad"
