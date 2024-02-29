@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var name_label = %name_label
 func _ready():
 	if ui_info:
-		ui_info.connect("changed", info)
+		ui_info.update_ui.connect(info)
 
-func info():
-	print("works")
+func info(obj_name: String, obj_descripton:String):
+	print(obj_name, obj_descripton)

@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://coejjwfudvdah"]
+[gd_scene load_steps=7 format=3 uid="uid://coejjwfudvdah"]
 
 [ext_resource type="PackedScene" uid="uid://cjl0kbnh3b3yk" path="res://hitbox_component.tscn" id="1_qsvkr"]
 [ext_resource type="PackedScene" uid="uid://bcp40ga44tdu4" path="res://object_infomation.tscn" id="2_hsngd"]
+[ext_resource type="Script" path="res://scripts/health_component.gd" id="3_nv3cf"]
+[ext_resource type="Resource" uid="uid://kdnxxx3miujb" path="res://resource/player_stats.tres" id="4_24atq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_trjuv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q3tem"]
 
 [node name="chest" type="Node3D"]
 
@@ -12,10 +16,21 @@ mesh = SubResource("BoxMesh_trjuv")
 
 [node name="Hitbox" parent="." instance=ExtResource("1_qsvkr")]
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_q3tem")
+
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="object_infomation" parent="." instance=ExtResource("2_hsngd")]
+obj_name = "Chest"
+obj_descripton = "yea its a chest"
+
+[node name="health_component" type="Node" parent="."]
+script = ExtResource("3_nv3cf")
+object_stats = ExtResource("4_24atq")
 
 [connection signal="area_entered" from="Hitbox" to="object_infomation" method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="object_infomation" method="_on_hitbox_area_exited"]
+[connection signal="call_death" from="health_component" to="health_component" method="enemy_death"]

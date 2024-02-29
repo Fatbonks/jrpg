@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcp40ga44tdu4"]
 
 [ext_resource type="Script" path="res://scripts/object_infomation.gd" id="1_0gpi7"]
-[ext_resource type="Resource" uid="uid://xrcmfax7y7va" path="res://mesh/info.tres" id="2_h4uba"]
+[ext_resource type="Resource" uid="uid://xrcmfax7y7va" path="res://resource/info.tres" id="2_urp5o"]
 
 [node name="object_infomation" type="Node"]
 script = ExtResource("1_0gpi7")
-ui_resource = ExtResource("2_h4uba")
+ui_resource = ExtResource("2_urp5o")

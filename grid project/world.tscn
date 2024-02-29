@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0tdn80bnab5y"]
+[gd_scene load_steps=13 format=3 uid="uid://b0tdn80bnab5y"]
 
 [ext_resource type="PackedScene" uid="uid://c4ygs0fuow1xg" path="res://player.tscn" id="1_kjur8"]
 [ext_resource type="MeshLibrary" uid="uid://bt276jt3ceh3a" path="res://mesh/lib.tres" id="2_dysnb"]
 [ext_resource type="PackedScene" uid="uid://bvp43h8wiom5u" path="res://ui.tscn" id="3_8svdb"]
 [ext_resource type="PackedScene" uid="uid://coejjwfudvdah" path="res://chest.tscn" id="4_n82id"]
+[ext_resource type="Script" path="res://scripts/resource_resetter.gd" id="5_s22dr"]
+[ext_resource type="Resource" uid="uid://kdnxxx3miujb" path="res://resource/player_stats.tres" id="6_mkbqi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g2ma1"]
 size = Vector3(2, 2, 2)
@@ -61,3 +63,8 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 [node name="Ui" parent="." instance=ExtResource("3_8svdb")]
 
 [node name="chest" parent="." instance=ExtResource("4_n82id")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -1)
+
+[node name="resource_stats_resetter" type="Node" parent="."]
+script = ExtResource("5_s22dr")
+resource_array = [ExtResource("6_mkbqi")]
